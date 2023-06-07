@@ -17,6 +17,6 @@ use Src\Models\Model;
 <body>
     <h1>Kursy walut</h1>
 
-    <?php var_dump((new Model)->getDb()); ?>
+    
 </body>
 </html>

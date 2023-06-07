@@ -15,7 +15,7 @@ class Model {
         $this->db = MyDb::getInstance();
     }
 
-    public function getDb() {
+    protected function getDb() {
         return $this->db;
     }
 }
