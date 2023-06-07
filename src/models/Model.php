@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+namespace Src\Models;
+
 use Database\MyDb;
+use mysqli;
 
 class Model {
     private mysqli $db;
@@ -12,7 +15,7 @@ class Model {
         $this->db = MyDb::getInstance();
     }
 
-    protected function getDb() {
+    public function getDb() {
         return $this->db;
     }
 }
