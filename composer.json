@@ -1,4 +1,10 @@
 {
+    "autoload": {
+        "psr-4": {
+          "Database\\": "database/",
+          "Src\\": "src/"
+        }
+    },
     "require": {
         "brick/money": "^0.8.0"
     }
