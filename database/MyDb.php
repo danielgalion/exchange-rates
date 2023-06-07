@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Database;
 
+use Exception;
 use mysqli;
 
 /**
@@ -39,7 +40,11 @@ final class MyDb {
     }
 
     private static function createDatabaseConnection(): mysqli {
-        $connection = new mysqli(ConnectionDetails::HOST, ConnectionDetails::LOGIN, ConnectionDetails::PASSWORD, ConnectionDetails::DATABASE, ConnectionDetails::PORT);
+        try {
+            $connection = new mysqli(ConnectionDetails::HOST, ConnectionDetails::LOGIN, ConnectionDetails::PASSWORD, ConnectionDetails::DATABASE, ConnectionDetails::PORT);
+        } catch (Exception $exception) {
+            die("DB mysqli error: " . $exception->getMessage());
+        }
 
         if ($connection->connect_error) {
             die("DB connection error: ". $connection->connect_error);
