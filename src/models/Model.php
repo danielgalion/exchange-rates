@@ -103,6 +103,21 @@ class Model {
         
         return $affectedRows;
     }
+
+    /**
+     * Use for CREATE, ALTER, and DROP TABLE queries.
+     */
+    public function tableQuery($query) {
+        $stmt = $this->db->prepare($query);
+        
+        if ($stmt === false) {
+            die("Error preparing query: " . $this->db->error);
+        }
+        
+        $stmt->execute();
+        
+        $stmt->close();
+    }
     
     private function getBindTypes($params) {
         $bindTypes = "";
