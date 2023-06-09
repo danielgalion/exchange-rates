@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Database;
+namespace App\Database;
 
 // @todo delete 'Example' from class name. Input login data. 
 abstract class ConnectionDetailsExample { 

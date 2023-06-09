@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\Controllers\ApiNbp;
+namespace App\Src\Controllers\ApiNbp;
 
 enum TableTypes: string {
     case TABLE_RATES_A = "a";

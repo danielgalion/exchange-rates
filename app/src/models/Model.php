@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Src\Models;
+namespace App\Src\Models;
 
-use Database\MyDb;
+use App\Database\MyDb;
 use mysqli;
 
 class Model {

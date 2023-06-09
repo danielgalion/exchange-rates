@@ -1,11 +1,14 @@
 <?php declare(strict_types=1);
 
-require_once __DIR__ . "/vendor/autoload.php";
-
-use Src\Models\Model;
+namespace App;
 
  ?>
-
+/**
+    @todo production:
+    1. install mysql
+    2. conf connection - credentials
+    3. change include_path (set to root) in php.ini
+*/
 <!DOCTYPE html>
 <html lang="pl">
 <head>
