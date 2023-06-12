@@ -104,6 +104,32 @@ class Model {
         return $affectedRows;
     }
 
+    public function upsertQuery($query, $params = []) {
+        $stmt = $this->db->prepare($query);
+
+        if ($stmt === false) {
+            die("Error preparing query: " . $this->db->error);
+        }
+
+        if (!empty($params)) {
+            $stmt->bind_param($this->getBindTypes($params), ...$params);
+        }
+
+        $stmt->execute();
+
+        $affectedRows = $stmt->affected_rows;
+
+        if ($affectedRows === 0) {
+            // No rows were updated, insert new row
+            $insertId = $this->insertQuery($query, $params);
+            $affectedRows = $insertId ? 1 : 0;
+        }
+
+        $stmt->close();
+
+        return $affectedRows;
+    }
+
     /**
      * Use for CREATE, ALTER, and DROP TABLE queries.
      */
