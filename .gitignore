@@ -1,2 +1,2 @@
 /vendor
-/database/ConnectionDetails.php
+/app/database/ConnectionDetails.php
