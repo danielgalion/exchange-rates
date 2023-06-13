@@ -50,4 +50,19 @@ class Rate extends Model {
             return $rates;
         }
     }
+
+    public function getAll(): ?array {
+        try {
+            $rates = $this->selectQuery("
+                SELECT mid, ask, bid, name, code
+                FROM ". self::TABLE ." 
+                LEFT JOIN currency ON currency.id = ". self::TABLE .".currency_id
+                ");
+        } catch (Exception $e) {
+            echo 'Problem with get rates from DB<br>';
+            return null;
+        } finally {
+            return $rates;
+        }
+    }
 }

@@ -97,5 +97,3 @@ class ActualRatesSaverController {
         return $data; 
     }
 }
-
-new ActualRatesSaverController;
