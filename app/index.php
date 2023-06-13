@@ -2,19 +2,20 @@
 
 namespace App;
 
- ?>
 /**
-    @todo production:
-    1. install mysql
-    2. conf connection - credentials
-    3. change include_path (set to root) in php.ini
-    4. ini_set and display_errors do not show errors
-
-    @todo during development: 
-    1. try-catches
-    2. validations
-    3. use transactions (if more than one query)
-*/
+ @todo production:
+ 1. install mysql
+ 2. conf connection - credentials
+ 3. change include_path (set to root) in php.ini
+ 4. ini_set and display_errors do not show errors
+ 5. Delete exceptions' messages to not show code inside information
+ 
+ @todo during development: 
+ 1. try-catches
+ 2. validations
+ 3. use transactions (if more than one query)
+ */
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
