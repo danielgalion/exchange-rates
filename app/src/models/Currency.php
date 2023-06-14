@@ -33,4 +33,15 @@ class Currency extends Model {
             return $id;
         }
     }
+
+    public function getAllCodes(): ?array {
+        try {
+            $codes = $this->selectQuery("SELECT id, code FROM " . self::TABLE . ";");
+        } catch (Exception $e) {
+            echo 'Problem with get all currencies<br>';
+            return null;
+        } finally {
+            return $codes;
+        }
+    }
 }

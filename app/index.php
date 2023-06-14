@@ -12,8 +12,10 @@ namespace App;
  
  @todo during development: 
  1. try-catches
- 2. validations
+ 2. validations - in exchanging
  3. use transactions (if more than one query)
+ 4. menu in this file. Back buttons (main page) in other views. - at least this for user's flow
+ 5. On no values at the start of app - show information.
  */
 ?>
 <!DOCTYPE html>
