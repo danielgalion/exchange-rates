@@ -38,17 +38,21 @@ class Rate extends Model {
         }
     }
 
-    public function getByCode($currencyCode): ?array {
-        $currencyId = (new Currency)->getIdByCode($currencyCode);
-
+    public function getByCurrencyId($currencyId): ?array {
         try {
             $rates = $this->selectQuery("SELECT mid, ask, bid FROM " . self::TABLE . " WHERE currency_id = ?", [$currencyId]);
         } catch (Exception $e) {
-            echo 'Problem with get exchange rate by currency code: ' . $e->getMessage();
+            echo 'Problem with get exchange rate<br>';
             return null;
         } finally {
-            return $rates;
+            return $rates[0];
         }
+    }
+
+    public function getByCode($currencyCode): ?array {
+        $currencyId = (new Currency)->getIdByCode($currencyCode);
+
+        return $this->getByCurrencyId($currencyId);
     }
 
     public function getAll(): ?array {

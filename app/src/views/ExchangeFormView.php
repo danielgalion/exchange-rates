@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Src\Views;
 
+use App\Src\Controllers\Exchange\ExchangeController;
 use App\Src\Controllers\Utils\PostValidator;
 use App\Src\Models\Currency;
 
@@ -40,6 +41,8 @@ require_once 'vendor/autoload.php';
         </select><br>
         <button type="submit">Oblicz</button>
     </form>
+    <h2>Wynik</h2>
+    <p>Za <?= PostValidator::amountSold() ?? 'x' ?> sprzedawanej waluty kupisz <?= (PostValidator::amountSold() ? (new ExchangeController)->calculate(PostValidator::currencySelling(), PostValidator::currencyBuying(), PostValidator::amountSold()) : 'y') ?> waluty docelowej.</p>
 </body>
 </html>
 

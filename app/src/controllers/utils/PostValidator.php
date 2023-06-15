@@ -13,6 +13,7 @@ final class PostValidator {
     public const CURRENCY_SELLING = 'currency_selling';
     public const CURRENCY_BUYING = 'currency_buying';
 
+    // POST variable amount_sold is type of string, so BigDecimal is precise.
     public static function amountSold(): ?BigDecimal {
         $post = (isset($_POST[self::AMOUNT_SOLD]) ? $_POST[self::AMOUNT_SOLD] : null);
 
