@@ -13,11 +13,11 @@ use App\Src\Models\Model;
  */
 final class Migrations extends Model { 
     public function runner() {
-        // (new CreateCurrencyTable)->run();
+        (new CreateCurrencyTable)->run();
         // (new CreateCurrencyTable)->down();
-        // (new CreateTradesTable)->run();
+        (new CreateTradesTable)->run();
         // (new CreateTradesTable)->down();
-        // (new CreateRatesTable)->run();
+        (new CreateRatesTable)->run();
         // (new CreateRatesTable)->down();
     }
 }
