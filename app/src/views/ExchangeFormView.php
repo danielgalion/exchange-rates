@@ -42,7 +42,7 @@ require_once 'vendor/autoload.php';
         <button type="submit">Oblicz</button>
     </form>
     <h2>Wynik</h2>
-    <p>Za <?= PostValidator::amountSold() ?? 'x' ?> sprzedawanej waluty kupisz <?= (PostValidator::amountSold() ? (new ExchangeController)->calculate(PostValidator::currencySelling(), PostValidator::currencyBuying(), PostValidator::amountSold()) : 'y') ?> waluty docelowej.</p>
+    <p>Za <?= PostValidator::amountSold() ?? 'x' ?> sprzedawanej waluty kupisz <?= (PostValidator::amountSold() ? (new ExchangeController(PostValidator::currencySelling(), PostValidator::currencyBuying(), PostValidator::amountSold()))->calculate() : 'y') ?> waluty docelowej.</p>
 </body>
 </html>
 
