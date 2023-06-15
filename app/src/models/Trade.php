@@ -30,7 +30,14 @@ class Trade extends Model {
     /**
      * @param limit how many last trades
      */
-    public function getLast($limit) {
-
+    public function getLast(int $limit): ?array {
+        return $this->selectQuery("
+            SELECT csold.code AS sold,  cbought.code AS bought,
+            selling_price, buying_price,
+            amount_sold, amount_bought FROM ". self::TABLE ."
+            LEFT JOIN currency csold ON csold.id = ".self::TABLE.".currency_selling_id
+            LEFT JOIN currency cbought ON cbought.id = ".self::TABLE.".currency_buying_id
+            ORDER BY timestamp DESC LIMIT ?
+        ", [($limit > 0 ? $limit : 20)]);
     }
 }

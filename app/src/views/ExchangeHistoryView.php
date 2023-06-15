@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Src\Views;
 
+use App\Src\Models\Trade;
+
 require_once 'vendor/autoload.php';
 
 ?>
@@ -17,5 +19,6 @@ require_once 'vendor/autoload.php';
 </head>
 <body>
     <h1>Ostatnie przewalutowania</h1>
+    <?= var_dump((new Trade)->getLast(3)) ?>
 </body>
 </html>
