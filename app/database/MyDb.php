@@ -40,8 +40,16 @@ final class MyDb {
     }
 
     private static function createDatabaseConnection(): mysqli {
+        $url = getenv('JAWSDB_MARIA_URL');
+        $dbparts = parse_url($url);
+
+        $hostname = $dbparts['host'];
+        $username = $dbparts['user'];
+        $password = $dbparts['pass'];
+        $database = ltrim($dbparts['path'],'/');
+
         try {
-            $connection = new mysqli(ConnectionDetails::HOST, ConnectionDetails::LOGIN, ConnectionDetails::PASSWORD, ConnectionDetails::DATABASE, ConnectionDetails::PORT);
+            $connection = new mysqli($hostname, $username, $password, $database, ConnectionDetails::PORT);
         } catch (Exception $exception) {
             die("DB mysqli error: " . $exception->getMessage());
         }
