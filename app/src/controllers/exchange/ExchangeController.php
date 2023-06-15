@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Src\Controllers\Exchange;
 
 use App\Src\Models\Rate;
+use App\Src\Models\Trade;
 use Brick\Math\BigDecimal;
 use Brick\Math\Exception\MathException;
 use Brick\Math\RoundingMode;
@@ -67,6 +68,13 @@ class ExchangeController {
     }
 
     private function save() {
-
+        (new Trade)->save(
+            $this->currencySelling,
+            $this->currencyBuying,
+            $this->rateSelling,
+            $this->rateBuying,
+            $this->amountSold,
+            $this->otherBought
+        );
     }
 }
