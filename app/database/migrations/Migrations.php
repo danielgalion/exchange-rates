@@ -13,13 +13,26 @@ use App\Src\Models\Model;
  */
 final class Migrations extends Model { 
     public function runner() {
-        // (new CreateCurrencyTable)->run();
+        (new CreateCurrencyTable)->run();
         // (new CreateCurrencyTable)->down();
-        // (new CreateTradesTable)->run();
+        (new CreateTradesTable)->run();
         // (new CreateTradesTable)->down();
-        // (new CreateRatesTable)->run();
+        (new CreateRatesTable)->run();
         // (new CreateRatesTable)->down();
     }
 }
-
-(new Migrations)->runner();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="../../index.php">Strona główna</a>
+    <?php
+        (new Migrations)->runner();    
+    ?>
+</body>
+</html>

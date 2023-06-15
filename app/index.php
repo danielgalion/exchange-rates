@@ -28,7 +28,23 @@ namespace App;
 </head>
 <body>
     <h1>Kursy walut</h1>
-
+    <ul>
+        <li>
+            <a href="database/migrations/Migrations.php">Stwórz tabele w bazie danych</a>
+        </li>
+        <li>
+            <a href="src/views/ActualRatesView.php">Ostatnio pobrane kursy walut</a>
+        </li>
+        <li>
+            <a href="src/views/ActualRatesSaverView.php">Pobierz kursy walut z NBP</a>
+        </li>
+        <li>
+            <a href="src/views/ExchangeFormView.php">Przelicz kursy walut</a>
+        </li>
+        <li>
+            <a href="src/views/ExchangeHistoryView.php">Ostatnie przeliczenia walut</a>
+        </li>
+    </ul>
     
 </body>
 </html>

@@ -19,6 +19,7 @@ require_once 'vendor/autoload.php';
     <title>Historia wymiany walut</title>
 </head>
 <body>
+    <a href="../../index.php">Strona główna</a>
     <h1>Ostatnie maksymalnie 20 przewalutowań</h1>
     <!-- <?= var_dump((new Trade)->getLast(3)) ?> -->
 
