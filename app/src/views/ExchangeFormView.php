@@ -20,6 +20,7 @@ require_once 'vendor/autoload.php';
     <title>Wymiana walut</title>
 </head>
 <body>
+    <a href="../../index.php">Strona główna</a>
     <h1>Przeliczanie kursów walut</h1>
     <h2>Jak to zrobić?</h2>
     <p>

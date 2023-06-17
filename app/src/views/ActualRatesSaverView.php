@@ -19,6 +19,7 @@ require_once 'vendor/autoload.php';
     <title>Zapis kursów walut</title>
 </head>
 <body>
+    <a href="../../index.php">Strona główna</a>
     <?php
         try {
             $rates = new ActualRatesSaverController;
