@@ -7,18 +7,19 @@ namespace App\Database\Migrations;
 require_once 'vendor/autoload.php';
 
 use App\Src\Models\Model;
+use Exception;
 
 /**
  * Uncomment to run which you want.
  */
 final class Migrations extends Model { 
     public function runner() {
+        (new CreateCurrencyTable)->down();
+        (new CreateTradesTable)->down();
+        (new CreateRatesTable)->down();
         (new CreateCurrencyTable)->run();
-        // (new CreateCurrencyTable)->down();
         (new CreateTradesTable)->run();
-        // (new CreateTradesTable)->down();
         (new CreateRatesTable)->run();
-        // (new CreateRatesTable)->down();
     }
 }
 ?>
@@ -32,7 +33,13 @@ final class Migrations extends Model {
 <body>
     <a href="../../index.php">Strona główna</a>
     <?php
-        (new Migrations)->runner();    
+        try {
+            (new Migrations)->runner();    
+        } catch (Exception $e) {
+            echo '<br>Wystąpił błąd podczas tworzenia tabel<br>';
+        } finally {
+            echo '<br>Utworzono tabele bez błędów<br>';
+        }
     ?>
 </body>
 </html>
