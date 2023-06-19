@@ -20,7 +20,7 @@ class ActualRatesSaverController {
         try {
             $this->saveToDb();
         } catch(OutOfBoundsException $e) {
-            echo 'Saving to DB exception out of bounds: ' . $e->getMessage(); 
+            echo '<br>Saving to DB exception out of bounds<br>'; 
         } 
     } 
 

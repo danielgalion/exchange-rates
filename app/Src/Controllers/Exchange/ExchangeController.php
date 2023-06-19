@@ -45,7 +45,7 @@ class ExchangeController {
             $this->rateSelling = ($ratesSelling['bid'] ? $ratesSelling['bid'] : $ratesSelling['mid']);
             $this->rateBuying = ($ratesBuying['ask'] ? $ratesBuying['ask'] : $ratesBuying['mid']);
         } catch (Exception $e) {
-            echo 'Problem with getting rates<br>';
+            echo '<br>Problem with getting rates<br>';
             return null;
         }
         
@@ -55,13 +55,13 @@ class ExchangeController {
 
             $this->otherBought = BigDecimal::of($plnBought)->dividedBy($this->rateBuying, 10, RoundingMode::HALF_UP);
         } catch (MathException $e) {
-            echo 'Problem with math calculations<br>';
+            echo '<br>Problem with math calculations<br>';
             return null;
         }
         try {
             $this->save();
         } catch (Exception $e) {
-            echo 'Problem with saving trade to DB<br>';
+            echo '<br>Problem with saving trade to DB<br>';
         }
     
         return $this->otherBought;

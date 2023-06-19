@@ -24,13 +24,13 @@ require_once 'vendor/autoload.php';
         try {
             $rates = new ActualRatesSaverController;
         } catch (Exception $e) {
-            echo 'Błąd w zapisie kursów walut<br>';
+            echo '<br>Błąd w zapisie kursów walut<br>';
         } finally {
-            echo 'Brak błędów podczas zapisywania kursów walut<br>';
+            echo '<br>Brak błędów podczas zapisywania kursów walut<br>';
         }
 
         foreach ($rates->getErrors() as $error) {
-            echo "Błąd pobierania z API: $error<br>";
+            echo "<br>Błąd pobierania z API<br>";
         }
     ?>
 </body>

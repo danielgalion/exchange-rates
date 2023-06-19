@@ -33,7 +33,7 @@ class Rate extends Model {
                 ", [$ask, $bid, $currencyId]);
             }
         } catch (Exception $e) {
-            echo 'Problem with saving Rate to db: ' . $e->getMessage();
+            echo '<br>Problem with saving Rate to db<br>';
         }
     }
 
@@ -41,7 +41,7 @@ class Rate extends Model {
         try {
             $rates = $this->selectQuery("SELECT mid, ask, bid FROM " . self::TABLE . " WHERE currency_id = ?", [$currencyId]);
         } catch (Exception $e) {
-            echo 'Problem with get exchange rate<br>';
+            echo '<br>Problem with get exchange rate<br>';
             return null;
         } finally {
             return $rates[0];
@@ -62,7 +62,7 @@ class Rate extends Model {
                 LEFT JOIN currency ON currency.id = ". self::TABLE .".currency_id
                 ");
         } catch (Exception $e) {
-            echo 'Problem with get rates from DB<br>';
+            echo '<br>Problem with get rates from DB<br>';
             return null;
         } finally {
             return $rates;

@@ -18,7 +18,7 @@ class Currency extends Model {
                 INSERT INTO " . self::TABLE . " (name, code) VALUES (?,?) ON DUPLICATE KEY UPDATE name = VALUES(name), code = VALUES(code);
             ", [$name, $code]);
         } catch (Exception $e) {
-            echo 'Problem with saving currency to DB: ' . $e->getMessage();
+            echo '<br>Problem with saving currency to DB<br>';
         }
     }
 
@@ -27,7 +27,7 @@ class Currency extends Model {
             $idQ = $this->selectQuery("SELECT id FROM " . self::TABLE . " WHERE code = ?", [$code]);
             $id = $idQ[0]['id'];
         } catch (Exception $e) {
-            echo 'Problem with get currency id: ' . $e->getMessage();
+            echo '<br>Problem with get currency id<br>';
             return 0;
         } finally {
             return $id;
@@ -38,7 +38,7 @@ class Currency extends Model {
         try {
             $codes = $this->selectQuery("SELECT id, code FROM " . self::TABLE . ";");
         } catch (Exception $e) {
-            echo 'Problem with get all currencies<br>';
+            echo '<br>Problem with get all currencies<br>';
             return null;
         } finally {
             return $codes;

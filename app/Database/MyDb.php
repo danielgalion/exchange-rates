@@ -50,11 +50,11 @@ final class MyDb {
         try {
             $connection = new mysqli($hostname, $username, $password, $database, 3306);
         } catch (Exception $exception) {
-            die("DB mysqli error: " . $exception->getMessage());
+            die("<br>DB mysqli error");
         }
 
         if ($connection->connect_error) {
-            die("DB connection error: ". $connection->connect_error);
+            die("<br>DB connection error");
         }
 
         return $connection;
