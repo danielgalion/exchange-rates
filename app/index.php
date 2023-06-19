@@ -15,9 +15,6 @@ namespace App;
     <h1>Kursy walut</h1>
     <ul>
         <li>
-            <a href="Database/Migrations/Migrations.php">Stwórz na nowo tabele w bazie danych</a>
-        </li>
-        <li>
             <a href="Src/Views/ActualRatesView.php">Ostatnio pobrane kursy walut</a>
         </li>
         <li>
