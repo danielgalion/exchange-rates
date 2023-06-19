@@ -8,7 +8,6 @@ use Exception;
 use mysqli;
 
 /**
- * @todo test with started and stopped mariadb
  * Class is singleton for not creating more than one instance of mysqli to make connection.
  */
 final class MyDb {

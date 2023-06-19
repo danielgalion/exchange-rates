@@ -13,7 +13,6 @@ class Rate extends Model {
     private const TABLE = 'rates'; 
 
     /**
-     * @todo test
      * @param mid pass null on no information 
      * @param ask pass null on no information
      * @param bid pass null on no information

@@ -8,9 +8,6 @@ use App\Src\Controllers\ApiNbp\ActualRates;
 
 $rates = (new ActualRates)->prepareData();
 
-
-// @todo osobno tabela currencies (dodawać jeśli brakuje). Osobno z kluczem obcym aktualne dane i przewalutowania.
-// @todo walut nie robić usuwalnych - dlatego że w historii przewalutowań może być aktualnie nieuwzględniana w API
 ?>
 <!DOCTYPE html> 
 <html lang="pl">

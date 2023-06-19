@@ -2,21 +2,6 @@
 
 namespace App;
 
-/**
- @todo production:
- 1. install mysql
- 2. conf connection - credentials
- 3. change include_path (set to root) in php.ini
- 4. ini_set and display_errors do not show errors
- 5. Delete exceptions' messages to not show code inside information
- 
- @todo during development: 
- 1. try-catches
- 2. validations - in exchanging
- 3. use transactions (if more than one query)
- 4. menu in this file. Back buttons (main page) in other views. - at least this for user's flow
- 5. On no values at the start of app - show information.
- */
 ?>
 <!DOCTYPE html>
 <html lang="pl">
