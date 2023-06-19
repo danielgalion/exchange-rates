@@ -49,7 +49,7 @@ final class MyDb {
         $database = ltrim($dbparts['path'],'/');
 
         try {
-            $connection = new mysqli($hostname, $username, $password, $database, ConnectionDetails::PORT);
+            $connection = new mysqli($hostname, $username, $password, $database, 3306);
         } catch (Exception $exception) {
             die("DB mysqli error: " . $exception->getMessage());
         }
